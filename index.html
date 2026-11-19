@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Órbita Digital — Marketing que gera clientes para sua empresa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#000;--white:#fff;--red:#ff2d3d;--sky:#6ec8ff;--grey:#a3a3a3;--soft:#f3f3f3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#020203;color:var(--white);font-family:'Sora',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{line-height:1.08;letter-spacing:-.025em;margin:0}
+h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.9rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}
+.red{color:var(--red)}.sky{color:var(--sky)}
+.btn{display:inline-block;background:var(--red);color:#fff;font:600 1rem 'Sora',sans-serif;border:0;border-radius:999px;padding:16px 30px;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:#ff4958;transform:translateY(-2px)}
+.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.03em}
+.logo i{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--red);margin-right:8px;animation:pulse 2s infinite}
+nav a.btn{padding:10px 20px;font-size:.9rem}
+
+/* hero */
+.hero{padding:40px 0 90px}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero p.lead{color:var(--grey);font-size:1.1rem;max-width:30em;margin:22px 0 28px}
+.proof{display:flex;gap:10px;align-items:center;margin-top:26px;color:var(--grey);font-size:.9rem}
+.avatars{display:flex}
+.avatars span{width:34px;height:34px;border-radius:50%;border:2px solid var(--black);margin-left:-8px;background:linear-gradient(135deg,var(--sky),var(--red))}
+.avatars span:first-child{margin-left:0}
+
+/* image slots */
+.slot{position:relative;border-radius:22px;overflow:hidden;background:#111;border:1px solid #2a2a2a;display:grid;place-items:center;text-align:center;color:var(--grey);font-size:.85rem}
+.slot::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 0 60%,rgba(110,200,255,.35),rgba(255,45,61,.35),transparent);animation:spin 9s linear infinite}
+.slot::after{content:"";position:absolute;inset:2px;border-radius:20px;background:linear-gradient(160deg,#2a0a14,#08182a)}
+.slot>*{position:relative;z-index:1}
+.slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2}
+.slot.light{background:#e6e6e6;border-color:#ddd;color:#555}
+.slot.light::after{background:#f3f3f3}
+.hero .slot{aspect-ratio:4/5;animation:float 6s ease-in-out infinite}
+.chip{position:absolute;z-index:3;background:var(--white);color:var(--black);border-radius:14px;padding:10px 14px;font-weight:600;font-size:.85rem;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.chip b{color:var(--red)}
+.chip.a{top:8%;left:-6%;animation:float 5s ease-in-out infinite}
+.chip.b{bottom:10%;right:-5%;animation:float 7s ease-in-out -2s infinite}
+
+/* form */
+.form{background:var(--white);color:var(--black);border-radius:22px;padding:26px;margin-top:8px}
+.form h3{margin-bottom:4px}
+.form small{color:#555;display:block;margin-bottom:16px}
+.form label{display:block;font-size:.8rem;font-weight:600;margin:10px 0 4px}
+.form input,.form select{width:100%;padding:13px 14px;border:1.5px solid #d0d0d0;border-radius:12px;font:400 1rem 'Sora',sans-serif;background:#fff}
+.form .btn{width:100%;margin-top:18px}
+.form .ok{display:none;text-align:center;padding:18px 0}
+.form.sent form{display:none}.form.sent .ok{display:block}
+.form .ok strong{font-size:1.3rem;display:block;margin-bottom:6px}
+
+/* sections */
+section{padding:90px 0}
+.white{background:transparent;color:var(--white)}
+.white .muted{color:#a3a3a3}
+.muted{color:var(--grey)}
+.head{max-width:640px;margin-bottom:46px}
+.head p{margin-top:14px;font-size:1.05rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;padding:42px 0;border-bottom:1px solid #222}
+.stats b{display:block;font-size:2.2rem;font-weight:800}
+.stats span{color:var(--grey);font-size:.9rem}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card .slot{aspect-ratio:4/3;margin-bottom:18px}
+.card p{margin-top:8px;font-size:.97rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split .slot{aspect-ratio:1/1}
+.list{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:14px}
+.list li{padding-left:34px;position:relative}
+.list li::before{content:"";position:absolute;left:0;top:.35em;width:18px;height:18px;border-radius:50%;background:var(--sky);box-shadow:inset 0 0 0 5px var(--black);outline:2px solid var(--sky)}
+.quote{border-left:4px solid var(--red);padding-left:22px;font-size:1.25rem;font-weight:600;line-height:1.45;max-width:720px}
+.quote small{display:block;margin-top:14px;font-weight:400;font-size:.9rem;color:var(--grey)}
+.final{text-align:center}
+.final .btn{margin-top:28px}
+footer{border-top:1px solid #222;padding:28px 0;color:var(--grey);font-size:.85rem;text-align:center}
+
+@keyframes float{50%{transform:translateY(-14px)}}
+.art{width:100%;height:100%;display:block}
+.grow{transform-box:fill-box;transform-origin:bottom;animation:grow 2.6s ease-in-out infinite alternate}
+@keyframes grow{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+.draw{stroke-dasharray:700;stroke-dashoffset:700;animation:draw 3.2s ease-in-out infinite alternate}
+@keyframes draw{to{stroke-dashoffset:0}}
+.blip{transform-box:fill-box;transform-origin:center;animation:blip 2s ease-in-out infinite}
+@keyframes blip{50%{transform:scale(1.35)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(255,45,61,0)}0%{box-shadow:0 0 0 0 rgba(255,45,61,.6)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero .grid>div{animation:rise .8s both}.hero .grid>div+div{animation-delay:.2s}
+
+.final{background:radial-gradient(700px 420px at 50% 110%,rgba(255,45,61,.55),transparent 70%),radial-gradient(600px 400px at 8% 0,rgba(110,200,255,.35),transparent 70%)}
+.lc .w{display:inline-block;white-space:nowrap}
+.lc .ch{position:relative;display:inline-block;perspective:500px}
+.lc .f{display:inline-block;transform-origin:bottom center}
+.lc .e{position:absolute;inset:0;display:inline-block;opacity:0;transform:rotateX(-90deg);transform-origin:top center}
+.car-wrap{position:relative;height:clamp(300px,40vw,420px);border-radius:28px;overflow:hidden;margin-bottom:56px;background:radial-gradient(60% 90% at 15% 15%,rgba(255,45,61,.6),transparent),radial-gradient(60% 90% at 88% 85%,rgba(110,200,255,.55),transparent),#06060c}
+.car-track{position:absolute;inset:0;outline:none;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.car-track:active{cursor:grabbing}
+.car-track:focus-visible{outline:3px solid var(--sky);outline-offset:-6px;border-radius:28px}
+.car-slot{position:absolute;left:50%;top:50%}
+.car-float{width:100%;height:100%;animation:drift 6s ease-in-out infinite}
+@keyframes drift{50%{transform:translateY(-.5em) rotate(.8deg)}}
+.car-card{width:100%;height:100%;border-radius:1.25em;padding:1.1em;display:flex;flex-direction:column;color:#fff;box-shadow:0 .8em 1.8em -.6em rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);overflow:hidden;position:relative}
+.car-card::after{content:'';position:absolute;width:9em;height:9em;border-radius:50%;right:-3em;bottom:-3em;background:rgba(255,255,255,.12)}
+.car-card .lg{width:2.6em;height:2.6em;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;font:800 1em Sora,sans-serif;font-style:normal;margin-bottom:.8em}
+.car-card b,.car-card small,.car-card span{display:block}
+.car-card b{font-size:1.05em}.car-card small{opacity:.75;font-size:.75em}
+.car-card strong{font-size:2.3em;font-weight:800;margin-top:auto;line-height:1}
+.car-card span{font-size:.8em;opacity:.85;margin-top:.3em}
+.white.deep{position:relative;overflow:hidden;color:#fff;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(255,255,255,.12),transparent 70%),radial-gradient(ellipse 120% 70% at 50% 115%,#14141c,transparent 65%),#020203}
+.white.deep::before{content:'';position:absolute;left:-50%;right:-50%;bottom:-8%;height:75%;background:linear-gradient(rgba(255,255,255,.13) 1px,transparent 1px) 0 0/64px 64px,linear-gradient(90deg,rgba(255,255,255,.13) 1px,transparent 1px) 0 0/64px 64px;transform:perspective(420px) rotateX(62deg);transform-origin:bottom;-webkit-mask-image:linear-gradient(to top,#000 8%,transparent 85%);mask-image:linear-gradient(to top,#000 8%,transparent 85%);animation:gridmove 8s linear infinite}
+@keyframes gridmove{to{background-position:0 64px,0 0}}
+.white.deep::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 45% 30% at 50% 6%,rgba(255,255,255,.2),transparent 70%),radial-gradient(ellipse 100% 100% at 50% 50%,transparent 50%,#000 100%)}
+.white.deep>.wrap{position:relative;z-index:1}
+.white.deep .muted{color:#a3a3a3}
+.white.deep .quote small{color:#a3a3a3!important}
+.white.deep .car-wrap{background:transparent}
+body::before{content:'';position:fixed;left:-50%;right:-50%;bottom:-8%;height:62%;z-index:-1;pointer-events:none;background:linear-gradient(rgba(255,255,255,.13) 1px,transparent 1px) 0 0/64px 64px,linear-gradient(90deg,rgba(255,255,255,.13) 1px,transparent 1px) 0 0/64px 64px;transform:perspective(420px) rotateX(62deg);transform-origin:bottom;-webkit-mask-image:linear-gradient(to top,#000 8%,transparent 85%);mask-image:linear-gradient(to top,#000 8%,transparent 85%);animation:gridmove 8s linear infinite}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 55% 32% at 50% 0,rgba(255,255,255,.18),transparent 70%),radial-gradient(ellipse 120% 70% at 50% 115%,#14141c,transparent 65%),radial-gradient(ellipse 100% 100% at 50% 50%,transparent 50%,#000 100%)}
+.white.deep{background:transparent;overflow:visible}
+.white.deep::before,.white.deep::after{display:none}
+.final{background:none}
+@media(max-width:860px){
+.hero .grid,.split{grid-template-columns:1fr}
+.cols{grid-template-columns:1fr}
+.stats{grid-template-columns:1fr 1fr}
+.chip.a{left:2%}.chip.b{right:2%}
+section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav>
+  <div class="logo"><i></i>Órbita Digital</div>
+  <a class="btn" href="#lead">Quero meu diagnóstico</a>
+</nav>
+
+<header class="hero">
+<div class="grid">
+  <div>
+    <h1 class="lc">Sua empresa merece <span class="red">mais clientes</span>, não mais curtidas.</h1>
+    <p class="lead">Criamos campanhas, funis e conteúdo que trazem contatos qualificados para o seu time comercial. Sem achismo: cada real investido é medido.</p>
+    <div class="form" id="lead">
+      <form id="f" novalidate>
+        <h3>Receba um diagnóstico gratuito</h3>
+        <small>Resposta em até 24h úteis. Sem compromisso.</small>
+        <label for="n">Seu nome</label>
+        <input id="n" name="nome" autocomplete="name" required placeholder="Maria Silva">
+        <label for="e">E-mail corporativo</label>
+        <input id="e" name="email" type="email" autocomplete="email" required placeholder="maria@empresa.com.br">
+        <label for="w">WhatsApp</label>
+        <input id="w" name="whatsapp" type="tel" autocomplete="tel" required placeholder="(86) 99999-9999">
+        <label for="s">Faturamento mensal da empresa</label>
+        <select id="s" name="faturamento">
+          <option>Até R$ 50 mil</option><option>R$ 50 mil a R$ 200 mil</option><option>R$ 200 mil a R$ 1 milhão</option><option>Acima de R$ 1 milhão</option>
+        </select>
+        <button class="btn" type="submit">Quero meu diagnóstico gratuito</button>
+      </form>
+      <div class="ok"><strong>Recebemos seu pedido!</strong>Em breve nosso time chama você no WhatsApp.</div>
+    </div>
+    <div class="proof"><div class="avatars"><span></span><span></span><span></span><span></span></div>+120 empresas já crescem com a gente</div>
+  </div>
+
+  <div style="position:relative">
+    <div class="slot"><img src="orbita-assets/crescimento.svg" alt="Crescimento de resultados" loading="lazy"></div>
+    <div class="chip a">Leads do mês <b>+312%</b></div>
+    <div class="chip b">Custo por lead <b>−47%</b></div>
+  </div>
+</div>
+</header>
+
+<div class="stats">
+  <div><b class="red">+120</b><span>empresas atendidas</span></div>
+  <div><b class="sky">R$ 18 mi</b><span>em vendas geradas</span></div>
+  <div><b>4,2x</b><span>retorno médio sobre anúncios</span></div>
+  <div><b class="red">7 dias</b><span>para a primeira campanha no ar</span></div>
+</div>
+</div>
+
+<section class="white">
+<div class="wrap">
+  <div class="head">
+    <h2>Chega de pagar por anúncio que não vira venda.</h2>
+    <p class="muted">Nós conectamos três frentes que a maioria das agências trata separado. Por isso o seu comercial recebe contatos prontos para conversar.</p>
+  </div>
+  <div class="cols">
+    <div class="card"><div class="slot light"><img src="orbita-assets/anuncios.svg" alt="Anúncios com público segmentado por perfil e intenção" loading="lazy"></div><h3>Anúncios que atraem quem compra</h3><p class="muted">Google e Meta Ads com público segmentado por cargo, setor e intenção de compra.</p></div>
+    <div class="card"><div class="slot light"><img src="orbita-assets/captura-leads.svg" alt="Página de captura de leads" loading="lazy"></div><h3>Páginas que convertem visita em contato</h3><p class="muted">Landing pages rápidas, testes A/B e formulários pensados para captar o lead certo.</p></div>
+    <div class="card"><div class="slot light"><img src="orbita-assets/automacao.svg" alt="Fluxo automatizado de e-mail e WhatsApp" loading="lazy"></div><h3>Automação que não deixa lead esfriar</h3><p class="muted">E-mail e WhatsApp com mensagens no momento certo, até o lead falar com seu vendedor.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap split">
+  <div class="slot"><img src="orbita-assets/resultados.svg" alt="Painel de resultados de marketing" loading="lazy"></div>
+  <div>
+    <h2>Você acompanha tudo, <span class="sky">em tempo real</span>.</h2>
+    <ul class="list">
+      <li>Painel simples mostrando quanto você investiu e quantos clientes voltaram.</li>
+      <li>Reunião mensal para ajustar a estratégia com base em dados.</li>
+      <li>Contrato sem fidelidade: você fica porque dá resultado.</li>
+    </ul>
+    <a class="btn" href="#lead">Quero ver como funciona</a>
+  </div>
+</div>
+</section>
+
+<section class="white deep">
+<div class="wrap">
+  <div class="head"><h2>Empresas que já estão em órbita.</h2><p class="muted">Arraste, clique nos cards ou use as setas do teclado para ver os resultados dos nossos clientes.</p></div><div id="car" class="car-wrap"></div><div hidden><svg class="art" viewBox="0 0 840 318" role="img" aria-label="Empresas parceiras"><text x="420" y="70" text-anchor="middle" fill="#000" font-size="22" font-weight="600" font-family="Sora,sans-serif">Empresas que crescem com a Órbita</text><g fill="#000" font-family="Sora,sans-serif" font-size="15" text-anchor="middle"><circle cx="70" cy="150" r="26"/><rect x="164" y="124" width="52" height="52" rx="12" fill="#ff2d3d"/><path d="M330 124l28 52h-56z"/><path d="M440 124l24 14v28l-24 14-24-14v-28z" fill="#6ec8ff" stroke="#000" stroke-width="3"/><path d="M580 122l28 28-28 28-28-28z"/><circle cx="770" cy="150" r="26" fill="none" stroke="#ff2d3d" stroke-width="10"/><g fill="#555"><text x="70" y="210">Cliente 1</text><text x="190" y="210">Cliente 2</text><text x="330" y="210">Cliente 3</text><text x="440" y="210">Cliente 4</text><text x="580" y="210">Cliente 5</text><text x="770" y="210">Cliente 6</text></g></g></svg></div>
+  <div class="quote">“Em 90 dias, dobramos o número de reuniões marcadas e reduzimos o custo de aquisição pela metade.”
+    <small style="color:#555">Nome do Cliente, Diretor Comercial na Empresa X</small></div>
+</div>
+</section>
+
+<section class="final">
+<div class="wrap">
+  <h2>Vagas limitadas para novos clientes este mês.</h2>
+  <p class="muted" style="margin-top:14px">Atendemos poucas empresas por vez para garantir resultado. Peça seu diagnóstico gratuito agora.</p>
+  <a class="btn" href="#lead">Garantir meu diagnóstico gratuito</a>
+</div>
+</section>
+
+<footer>© 2026 Órbita Digital. Todos os direitos reservados.</footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var ok=true;
+  this.querySelectorAll('[required]').forEach(function(i){if(!i.value.trim()){ok=false;i.style.borderColor='#ff2d3d'}else{i.style.borderColor=''}});
+  if(ok){document.getElementById('lead').classList.add('sent')}
+});
+</script>
+<script>
+(function(){var h=document.querySelector('h1.lc');if(!h)return;h.setAttribute('aria-label',h.textContent);var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function wrap(node){Array.from(node.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(' '));return}var w=document.createElement('span');w.className='w';Array.from(t).forEach(function(ch){var s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');s.innerHTML='<span class="f"></span><span class="e"></span>';s.firstChild.textContent=ch;s.lastChild.textContent=ch;w.appendChild(s)});f.appendChild(w)});c.replaceWith(f)}else if(c.nodeType===1)wrap(c)})}
+wrap(h);var chars=h.querySelectorAll('.ch'),busy=false,vis=true;
+function play(){if(busy||rm||!chars.length)return;busy=true;var last;chars.forEach(function(c,i){var o={duration:650,delay:i*35,easing:'cubic-bezier(.34,1.56,.64,1)',fill:'backwards'};c.firstChild.animate([{transform:'rotateX(0)',opacity:1},{transform:'rotateX(90deg) translateY(-6px)',opacity:0}],o);last=c.lastChild.animate([{transform:'rotateX(-90deg) translateY(6px) scale(.8)',opacity:0},{transform:'none',opacity:1}],o)});last.onfinish=function(){busy=false}}
+h.addEventListener('mouseenter',play);h.addEventListener('click',play);new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(h);setTimeout(play,1000);setInterval(function(){if(vis&&!document.hidden)play()},3500)})();
+
+(function(){var C=[{n:'Nova Clínica',s:'Saúde',v:'+312%',l:'leads em 90 dias',a:'#ff2d3d',b:'#5a0010'},{n:'Grupo Atlas',s:'Indústria',v:'−47%',l:'custo por lead',a:'#6ec8ff',b:'#0a3d66'},{n:'Via Logística',s:'Transporte',v:'4,2x',l:'retorno sobre anúncios',a:'#ff4d5d',b:'#1a1a5e'},{n:'Studio Prime',s:'Arquitetura',v:'+86',l:'reuniões por mês',a:'#6ec8ff',b:'#5a0a1c'},{n:'Tech Norte',s:'Software B2B',v:'2x',l:'vendas em 6 meses',a:'#ff6a77',b:'#0a2a5a'}];
+var root=document.getElementById('car');if(!root)return;var n=C.length,turn=0,k=1,raf=0,hov=false,vis=true,drag=null,rm=matchMedia('(prefers-reduced-motion:reduce)').matches,W=206,H=292,R=138,LEAN=38,PULL=140,ANG=[-4.2,2.6,-1.4,3.8,1.7],PER=[4.7,5.9,6.7,5.3,7.1];
+root.innerHTML=`<div class="car-track" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Clientes da Órbita">${C.map(function(c,i){return `<div class="car-slot"><div class="car-float" style="animation-duration:${PER[i]}s"><div class="car-card" style="background:linear-gradient(155deg,${c.a},${c.b})"><i class="lg">${c.n[0]}</i><b>${c.n}</b><small>${c.s}</small><strong>${c.v}</strong><span>${c.l}</span></div></div></div>`}).join('')}</div>`;
+var tr=root.firstChild,sl=[].slice.call(tr.children);
+function paint(){sl.forEach(function(s,i){var th=(i-turn)*2*Math.PI/n,f=(Math.cos(th)+1)/2;s.style.transform='translate(-50%,-50%) translate('+(Math.sin(th)*R*k)+'px,'+(-(1-f)*LEAN*k)+'px) rotate('+ANG[i]+'deg) scale('+(.5+.5*f)+')';s.style.zIndex=Math.round(f*100)})}
+function lay(){k=Math.max(.1,Math.min(root.clientWidth/476,root.clientHeight/340));sl.forEach(function(s){s.style.width=W*k+'px';s.style.height=H*k+'px';s.style.fontSize=16*k+'px'});paint()}
+function glide(to){cancelAnimationFrame(raf);var a=turn;if(rm||a===to){turn=to;paint();return}var t0=performance.now();(function tick(t){var p=Math.min(1,(t-t0)/620);turn=a+(to-a)*(1-Math.pow(1-p,4));paint();if(p<1)raf=requestAnimationFrame(tick)})(t0)}
+tr.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button)return;cancelAnimationFrame(raf);var s=e.target.closest('.car-slot');drag={x0:e.clientX,t0:turn,lx:e.clientX,lt:e.timeStamp,vx:0,far:0,hit:sl.indexOf(s)};try{tr.setPointerCapture(e.pointerId)}catch(_){}});
+tr.addEventListener('pointermove',function(e){var g=drag;if(!g)return;var dt=Math.max(1,e.timeStamp-g.lt);g.far=Math.max(g.far,Math.abs(e.clientX-g.x0));g.vx=(g.vx+(e.clientX-g.lx)/k/dt)/2;g.lx=e.clientX;g.lt=e.timeStamp;turn=g.t0-(e.clientX-g.x0)/k/PULL;paint()});
+function up(){var g=drag;if(!g)return;drag=null;var at=Math.round(turn);if(g.far<5){var d=g.hit<0?0:((g.hit-((at%n)+n)%n)%n+n)%n;if(d>n/2)d-=n;glide(at+d);return}glide(Math.round(turn+Math.max(-2,Math.min(2,-g.vx*150/PULL))))}
+tr.addEventListener('pointerup',up);tr.addEventListener('pointercancel',up);
+tr.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){e.preventDefault();glide(Math.round(turn)+d)}});
+root.addEventListener('mouseenter',function(){hov=true});root.addEventListener('mouseleave',function(){hov=false});
+new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(root);
+setInterval(function(){if(!drag&&!hov&&vis&&!rm&&!document.hidden)glide(Math.round(turn)+1)},3500);
+addEventListener('resize',lay);lay()})();
+</script>
+</body>
+</html>
+
